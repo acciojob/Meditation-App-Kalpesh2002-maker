@@ -12,8 +12,17 @@ let duration = 600;
 function formatTime(time) {
   const minutes = Math.floor(time / 60);
   const seconds = Math.floor(time % 60);
-  return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+  // Only pad when seconds > 0 and < 10
+  if (seconds === 0) {
+    return `${minutes}:0`;
+  } else if (seconds < 10) {
+    return `${minutes}:0${seconds}`;
+  } else {
+    return `${minutes}:${seconds}`;
+  }
 }
+
 
 // Play / Pause
 play.addEventListener("click", () => {
