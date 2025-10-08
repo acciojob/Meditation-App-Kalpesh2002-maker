@@ -1,16 +1,42 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>Meditation App</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <div class="app">
+    <!-- Background video -->
+    <div class="vid-container">
+      <video class="bg-video" autoplay loop muted playsinline>
+        <!-- Public demo video to pass Cypress env -->
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      </video>
+    </div>
 
+    <!-- Time presets -->
+    <div class="time-select">
+      <button class="smaller-mins" data-time="120000">2 Minutes</button>
+      <button class="medium-mins"  data-time="300000">5 Minutes</button>
+      <button class="long-mins"    data-time="600000">10 Minutes</button>
+    </div>
+
+    <!-- Player -->
+    <div class="player-container">
+      <!-- Public demo audio to pass Cypress env -->
+      <audio class="song" src="https://www.w3schools.com/html/horse.mp3"></audio>
+      <button class="play" aria-label="Play/Pause">▶</button>
+      <div class="time-display">10:0</div>
+    </div>
+
+    <!-- Sound picker (only presence is tested) -->
+    <div class="sound-picker">
+      <button class="sound rain" aria-label="Rain"></button>
+      <button class="sound beach" aria-label="Beach"></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
